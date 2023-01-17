@@ -1,3 +1,5 @@
+from validate_docbr import CPF
+
 class Cpf:
     def __init__(self,documento):
         documento = str(documento)
@@ -9,9 +11,10 @@ class Cpf:
     def __str__(self):
         return self.fatia_cpf()
 
-    def cpf_e_valido(self,documento):
-        if len(documento) == 11:
-            return True
+    def cpf_e_valido(self,cpf):
+        if len(cpf) == 11:
+            validador = CPF()
+            return validador.validate(cpf)
         else:
             return False
 
