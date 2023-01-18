@@ -1,6 +1,6 @@
-from validate_docbr import CPF
+from validate_docbr import CPF, CNPJ
 
-class Cpf:
+class CpfCnpj:
     def __init__(self,documento):
         documento = str(documento)
         if self.cpf_e_valido(documento):
@@ -16,12 +16,15 @@ class Cpf:
             validador = CPF()
             return validador.validate(cpf)
         else:
-            return False
+            raise ValueError("Quantidade de digitos errada")
 
     def fatia_cpf(self):
-        parte_1 = self.cpf[:3]
-        parte_2 = self.cpf[3:6]
-        parte_3 = self.cpf[6:9]
-        parte_4 = self.cpf[9:]
+        mascara = CPF()
+        return mascara.mask(self.cpf)
 
-        return f'{parte_1}.{parte_2}.{parte_3}-{parte_4}'
+    def valida_cnpj(self, cnpj):
+        if len(cnpj) == 14:
+            validador = CNPJ
+            return validador.validate(cnpj)
+        else:
+            raise ValueError("CNPJ inválido")
