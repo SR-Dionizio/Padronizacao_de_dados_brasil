@@ -1,0 +1,3 @@
+Número de chassis = 1234 - Nome do cliente = dsvsavsf - Lote = a1 - Mês = 2023-01-19 16:55:16.411242 - Observações = n
+Número de chassis = 2344 - Nome do cliente = afsasf - Lote = a1 - Mês = 2023-01-19 16:58:01.242586 - Observações = n
+Número de chassis = 1234 - Nome do cliente = asfasf - Lote = a1 - Mês = 2023-01-19 16:59:18.628705 - Observações = n
