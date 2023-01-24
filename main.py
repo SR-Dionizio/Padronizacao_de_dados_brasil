@@ -1,14 +1,14 @@
 from acesso_cep import BuscaEndereco
 from datas_br import DatasBR
 from TelefonesBR import telefoneBr
-from cpf_cnpj import Documento
+from cpf_cnpj import Documento, DocCpf, DocCNPJ
 
 insira_telefone = input("insira o seu telefone")
 objeto_telefone = telefoneBr(insira_telefone)
 telefone_formatado = objeto_telefone.format_numero()
 
 insira_CPF = input("Insira seu CPF")
-objeto_CPF = Documento(insira_CPF)
+objeto_CPF = Documento.cria_documento(insira_CPF)
 
 insira_cep = input("Insira o seu cep")
 objeto_cep = BuscaEndereco(insira_cep)

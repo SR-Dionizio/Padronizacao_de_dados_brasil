@@ -24,7 +24,7 @@ class DocCNPJ:
         return mascara.mask(self.cnpj)
 
     def __str__(self):
-        return self.fatia_cnpj()
+        return f'Seu documento é: {self.fatia_cnpj()}'
         
     def cnpj_e_valido(self, cnpj):
         validador = CNPJ()
@@ -39,7 +39,7 @@ class DocCpf:
             raise ValueError("CPF inválido")
 
     def __str__(self):
-        return self.fatia_cpf()
+        return f'Seu documento é: {self.fatia_cpf()}'
 
     def cpf_e_valido(self,cpf):
         validador = CPF()
