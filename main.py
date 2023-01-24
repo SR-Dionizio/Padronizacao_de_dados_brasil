@@ -1,5 +1,22 @@
 from acesso_cep import BuscaEndereco
-cep = "26280670"
-objeto_cep = BuscaEndereco(cep)
-bairro, cidade, uf = objeto_cep.acessa_via_cep()
-print(bairro, cidade, uf)
+from datas_br import DatasBR
+from TelefonesBR import telefoneBr
+from cpf_cnpj import Documento
+
+insira_telefone = input("insira o seu telefone")
+objeto_telefone = telefoneBr(insira_telefone)
+telefone_formatado = objeto_telefone.format_numero()
+
+insira_CPF = input("Insira seu CPF")
+objeto_CPF = Documento(insira_CPF)
+
+insira_cep = input("Insira o seu cep")
+objeto_cep = BuscaEndereco(insira_cep)
+logradouro, bairro, cidade, uf = objeto_cep.acessa_via_cep()
+
+cadastra_ano = DatasBR()
+formata_data = cadastra_ano.mes_cadastro()
+print(logradouro, bairro, cidade, uf)
+print(telefone_formatado)
+print(f'cadastrado em {formata_data}')
+print(objeto_CPF)

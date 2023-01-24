@@ -26,6 +26,7 @@ class BuscaEndereco:
         r = requests.get(url)
         dados = r.json()
         return (
+            dados['logradouro'],
             dados['bairro'],
             dados['localidade'],
             dados['uf']
